@@ -4,11 +4,15 @@ resource "aws_s3_bucket" "backups" {
 }
 
 resource "aws_iam_user" "backup-bot" {
-  name = "${var.cluster_name}-backup-bot"
+  name = "${local.cluster_name}-backup-bot"
+}
+
+resource "aws_iam_access_key" "backup-bot" {
+  user = aws_iam_user.backup-bot.name
 }
 
 resource "aws_iam_user_policy" "backup-bot" {
-  name = "${var.cluster_name}-backup-bot"
+  name = "${local.cluster_name}-backup-bot"
   user = aws_iam_user.backup-bot.id
 
   policy = <<EOF
