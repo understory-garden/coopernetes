@@ -91,6 +91,6 @@ releases:
   - name: polis
     namespace: polis
     chart: itme/polis
-    version: 0.1.1
+    version: 0.1.6
     values:
-      - host: polis.itme.host
+      - host: pol.is.itme.host
