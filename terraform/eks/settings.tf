@@ -1,12 +1,12 @@
 terraform {
-  required_version = ">= 0.12.9"
+  required_version = "= 0.12.24"
 
   backend "s3" {
     bucket    = "itme-operations"
     key       = "terraform/us-west-2/eks/thich-nhat-hanh.tfstate"
     region    = "us-west-2"
     profile   = "itme"
-    encrypted = true
+    encrypt   = true
   }
 }
 

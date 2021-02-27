@@ -12,7 +12,7 @@ YAML
 }
 
 resource "local_file" "secrets" {
-  depends_on = ["local_file.sops"]
+  depends_on = [local_file.sops]
 
   filename          = "${local.generated}/secrets.yaml"
   sensitive_content = <<-YAML
