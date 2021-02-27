@@ -56,7 +56,7 @@ releases:
       - controller:
           service:
             annotations:
-              service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+              service.beta.kubernetes.io/aws-load-balancer-type: nlb
   - name: cert-manager
     namespace: cert-manager
     chart: jetstack/cert-manager
