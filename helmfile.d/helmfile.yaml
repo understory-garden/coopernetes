@@ -80,5 +80,6 @@ releases:
   ### Monitoring
   - name: prometheus-operator
     namespace: system-monitoring
+    installed: false
     chart: prometheus-community/kube-prometheus-stack
     version: 12.8
