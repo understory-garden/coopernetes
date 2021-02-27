@@ -32,7 +32,7 @@ Based on the example at https://github.com/terraform-aws-modules/terraform-aws-e
 1. Once you deploy your first application with an Ingress, run `kubectl get ingress --all-namespaces` to list the address associated with the ingress. That is the load balancer for all inbound requests on the clster. You should create a DNS entry pointing to this load balancer for all services you want to create.
 1. Port forward into kibana by running the command from below, then go to Discover menu item, configure the index to `kubernetes_cluster*`, choose a `@timestamp` and Kibana is ready.
 1. Once the velero client is installed, you need to run a couple commands to configure and setup backups:
-  - Run `velero client config set namespace=system-backups`. This tells velero what namespace we installed it it.
+  - Run `velero client config set namespace=system-backup`. This tells velero what namespace we installed it it.
   - Run `velero backup create test-backup` to test the backup functionality
 1. Once prometheus-operator is installed, you should add the following dashboard to grafana: https://grafana.com/grafana/dashboards/8670.
   - You can run the grafan dashboard by finding the grafana pod in the system-monitoring namespace, and then running: `kubectl port-forward <GRAFANA_POD> -n system-monitoring 3000:3000`
