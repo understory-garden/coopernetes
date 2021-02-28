@@ -40,7 +40,7 @@ releases:
   # we use the community one (ingress-nginx) rather than the nginx one (nginx-ingress). When reading tutorials make
   # sure to pay attention to which ingress they are referring to. It's availible at https://github.com/kubernetes/ingress-nginx
   - name: ingress-nginx
-    namespace: kube-system
+    namespace: system-ingress
     chart: ingress-nginx/ingress-nginx
     version: 3.23.0
     set:
@@ -51,6 +51,7 @@ releases:
           service:
             annotations:
               service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+              service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: '60'
               service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: 'true'
               service.beta.kubernetes.io/aws-load-balancer-type: nlb
   - name: cert-manager
