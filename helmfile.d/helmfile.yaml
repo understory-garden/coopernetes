@@ -64,6 +64,8 @@ releases:
   - name: cluster-issuers
     namespace: cert-manager
     chart: ./charts/cluster-issuers/
+    values:
+      - ./values/letsencrypt-dns.yaml.gotmpl
   ### Log Aggregation
   # Typically only needed for large clusters with lots of logs.
   # For small clusters, you can grab the logs of an individual pod with kuebctl logs.

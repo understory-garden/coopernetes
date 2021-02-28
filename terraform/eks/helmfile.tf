@@ -21,6 +21,9 @@ resource "local_file" "secrets" {
   velero:
     aws_access_key_id: ${aws_iam_access_key.backup-bot.id}
     aws_secret_access_key: ${aws_iam_access_key.backup-bot.secret}
+  letsencrypt:
+    aws_access_key_id: ${aws_iam_access_key.dns01-solver.id}
+    aws_secret_access_key: ${aws_iam_access_key.dns01-solver.secret}
 YAML
 
   provisioner "local-exec" {
