@@ -86,3 +86,9 @@ releases:
     installed: false
     chart: prometheus-community/kube-prometheus-stack
     version: 12.8
+  ### Wordpress
+  - name: wordpress-insecure
+    namespace: wordpress-insecure
+    chart: bitnami/wordpress
+    values:
+      - ./values/wordpress.yaml.gotmpl
